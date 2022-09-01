@@ -9,7 +9,7 @@ const evalhandler = (items) => {
     }
 }
 
-const AnswerChecker = (x, y, z, setUseStack) => {
+const AnswerChecker = (x, y, z) => {
 
     //userAnswer, ansequation, equation
 
@@ -51,7 +51,7 @@ const AnswerChecker = (x, y, z, setUseStack) => {
         }
         finally {
 
-            logicalCheck(Array, Answer, setUseStack)
+            logicalCheck(Array, Answer)
 
         }
 
@@ -60,6 +60,7 @@ const AnswerChecker = (x, y, z, setUseStack) => {
 
     //promise
     const promise = new Promise(function(resolve, reject) {
+
         try{
             evalhandler(Solution)
         }
@@ -75,10 +76,9 @@ const AnswerChecker = (x, y, z, setUseStack) => {
 
 export { AnswerChecker, evalhandler }
 
-function logicalCheck(Array, Answer, setUseStack) {
+function logicalCheck(Array, Answer) {
     if (evalhandler(Array) === Answer) {
         setTimeout(() => {
-            setUseStack(true)
             window.location.reload()
         }, 1000)
     }

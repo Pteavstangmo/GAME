@@ -10,14 +10,14 @@ function OperationField({setUserAnswer}) {
     }
 
     const resetHandler = () => {
-        console.log('resetClick')
+        window.location.reload()
     }
 
     return (
         <div class='parent'>
             <input class='inputfield' type='text' onChange={(e)=>{setValue(e.target.value)}}/>
             <div class='parentbutton'>
-                <button class='buttonSubmit' onClick={onclickHandler}>Submit</button>
+                <button class='buttonSubmit' onClick={onclickHandler}>Submit your equation!</button><br/>
                 <button class='buttonReset' onClick={resetHandler}>Reset</button>
             </div>
         </div>

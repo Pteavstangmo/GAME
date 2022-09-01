@@ -22,18 +22,10 @@ function Play() {
     const [equation, setEquation] = useState(null)
     const [ansequation, setAnsequation] = useState(null)
     const [userAnswer, setUserAnswer] = useState(null)
-    const [stack, setStack] = useState(0)
-    const [useStack, setUseStack] = useState(false)
 
     const HANDLE_SETSTATE1 = (e) =>{
         setUserAnswer(e);
     }
-
-    const stackPromise = new Promise(function(resolve, reject){
-        if(useStack){
-            setStack(prevState => prevState + 1)
-        }
-    })
 
     useEffect(() => {
 
@@ -41,7 +33,7 @@ function Play() {
 
         } else{
             //operated the answerchecker
-            AnswerChecker(userAnswer, ansequation, equation, setUseStack)
+            AnswerChecker(userAnswer, ansequation, equation)
         }
     
     }, [equation, userAnswer, ansequation])
@@ -65,12 +57,6 @@ function Play() {
             setANSEQ: HANDLE_STATE2
         })
 
-        if(localStorage.getItem('Stack') !== null){
-            setStack(localStorage.getItem('Stack'))
-        } else{
-            localStorage.setItem('Stack', 0)
-        }
-
     }, [])
     
     return (
@@ -79,7 +65,7 @@ function Play() {
                 <div class='top-parent'>
                     <div class='main-parent'>
                     <div class='underline'><div class='logo-text'>Faster Than you think</div></div>
-                    <div><Timer /></div><div>{ stack }</div>
+                    <div><Timer /></div>
                     </div>
                 </div>
 

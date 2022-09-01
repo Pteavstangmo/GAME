@@ -1,1 +1,11 @@
-/*# sourceMappingURL=index.css.map */
+.parent {
+  display: flex;
+}
+.parent .main-text {
+  font-size: 32px;
+  font-weight: 600;
+}
+.parent .leaderboard-text {
+  margin-top: 10px;
+  font-size: 16px;
+}/*# sourceMappingURL=index.css.map */
