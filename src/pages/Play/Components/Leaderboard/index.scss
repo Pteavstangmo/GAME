@@ -1,0 +1,13 @@
+.parent{
+    display: flex;
+
+    .main-text{
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .leaderboard-text{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+}

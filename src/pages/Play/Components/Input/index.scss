@@ -1,0 +1,41 @@
+@import '../../../scss/varible';
+
+.parent{
+
+    font-family: 'Kanit', sans-serif;
+
+    display: flex;
+
+    .inputfield{
+
+        font-size: 16px;
+        padding: 10px 10px 10px 10px;
+
+        &:focus{
+            background-color: white;
+        }
+    }
+
+    .parentbutton{
+
+        font-family: 'Kanit', sans-serif;
+
+        .buttonSubmit{
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            border-color: white;
+            background-color: #FDB90E;
+            padding: 8px 12px 8px 12px;
+        }
+
+        .buttonReset{
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            border-color: white;
+            background-color: white;
+            padding: 8px 12px 8px 12px;
+        }
+    }
+}
