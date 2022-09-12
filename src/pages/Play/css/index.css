@@ -1,72 +1,131 @@
-.top-parent {
-  position: absolute;
-  padding: 0px 0px 35px 0px;
-  z-index: 1;
-  width: 100vw;
-}
-.top-parent .main-parent {
-  padding: 35px 60px 35px 60px;
-}
-.top-parent .main-parent .underline {
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
-}
-.top-parent .main-parent .logo-text {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 800;
-  font-style: italic;
-  font-size: 28px;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.middle-parent {
-  display: flex;
-  width: 100vw;
-  margin-top: 150px;
-  position: fixed;
-  z-index: -1;
-  align-content: center;
-  justify-content: center;
+.play-main {
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  height: 100vh;
 }
-.middle-parent .first-card {
+.play-main .card-main {
+  grid-column-start: 2;
+  grid-column-end: 3;
   display: flex;
+  height: 100vh;
   flex-direction: column;
-  gap: 30px;
   align-items: center;
   justify-content: center;
-  height: 600px;
-  width: 830px;
-  box-shadow: 10px 6px 40px 3px rgba(0, 0, 0, 0.25);
+  border-left: 3px solid black;
+  border-right: 3px solid black;
 }
-.middle-parent .first-card .stack {
-  font-size: 48px;
+.play-main .card-main .userInput {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-.middle-parent .second-card {
-  margin-left: 97px;
-  height: 600px;
-  width: 326px;
-  justify-self: end;
-  box-shadow: 10px 6px 40px 3px rgba(0, 0, 0, 0.25);
+.play-main .sub-card-1 {
+  display: box;
+  grid-column-start: 1;
 }
-.middle-parent .second-card .text {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
+.play-main .sub-card-2 {
+  grid-column-start: 3;
+}
+.play-main .sub-card-2 .help-parent {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  font-size: 14px;
+}
+.play-main .sub-card-2 .help-parent .suggestbutton {
+  border: none;
+  width: 300px;
+  box-shadow: none;
+  text-align: left;
+}
+.play-main .sub-card-2 .fb-parent {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.play-main .sub-card-2 .fb-parent .fb-parent2 {
+  display: flex;
+  flex-direction: row;
+}
+.play-main .sub-card-2 .fb-parent .fb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px 10px 10px 10px;
+  color: #002622;
+  height: 25px;
+  width: 145px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 3px solid #002622;
+  box-shadow: 0px 5px 0px 0px #000000;
+}
+.play-main .sub-card-2 .fb-parent .fb-small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  padding: 10px 10px 10px 10px;
+  color: #002622;
+  height: 35px;
+  width: 35px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 3px solid #002622;
+  box-shadow: 0px 5px 0px 0px #000000;
 }
 
-@media screen and (max-width: 600px) {
-  .second-card {
+@media (max-width: 768px) {
+  .play-main {
+    display: block;
+  }
+}
+@media (max-width: 900px) {
+  .play-main {
+    display: block;
+  }
+  .sub-card-1 {
+    display: none;
+  }
+  .sub-card-2 {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
-  .middle-parent {
-    margin-top: 200px;
+@media (max-width: 1040px) {
+  .play-main .sub-card-2 .fb-parent .fb {
+    display: none;
   }
 }
-@media screen and (max-height: 1000px) {
-  .middle-parent {
-    margin-top: 200px;
-  }
-  .first-card {
-    height: 2000px;
-  }
+.button-main {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 45px;
+  width: 145px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 3px solid #002622;
+  box-shadow: 0px 5px 0px 0px #000000;
+  gap: 10px;
+}
+
+.button-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 0px 0px #000000;
 }/*# sourceMappingURL=index.css.map */

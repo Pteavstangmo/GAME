@@ -1,8 +1,17 @@
-.parent{
+.parent-output{
     text-align: center;
     display: flex;
     flex-direction: column;
 
     font-size: 48px;
+    font-weight: 600;
 
+    .eq{
+        font-size: 48px;
+        letter-spacing: 12px;
+    }
+
+    .ans{
+        font-size: 60px;
+    }
 }

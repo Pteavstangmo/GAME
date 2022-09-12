@@ -8,7 +8,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input[type=button] {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
 }

@@ -11,7 +11,7 @@ function Timer() {
         }, 1000);
         return () => clearInterval(interval);
       }, [])
-
+      
       const endtimer = new Promise(function(resolve, reject){
         if(timer<=0){
             setTimeout(() => {
@@ -21,7 +21,7 @@ function Timer() {
       })
 
   return (
-    <div class='Timer'>Timer left : {timer}</div>
+    <h2 class='Timer'>Timer left : {timer}</h2>
   )
 
 }

@@ -2,6 +2,8 @@ import React,{ useEffect, useState, createContext } from 'react'
 
 import './css/index.css'
 
+import { ReactComponent as Logoicons } from '../../assets/Asset 1.svg'
+
 //js modules import
 import { RandomEquation, RandomEquationAnswer } from './Components/RandomNumber.module'
 import { AnswerChecker } from './Components/AnswerChecker.module'
@@ -11,7 +13,6 @@ import Message from './Components/Message'
 import OperationField from './Components/Input'
 import Calculated from './Components/Calculate/Calculated'
 import Timer from './Components/timer/timer'
-import Leaderboard from './Components/Leaderboard'
 
 
 export const UserContext = createContext(null)
@@ -23,9 +24,9 @@ function Play() {
     const [ansequation, setAnsequation] = useState(null)
     const [userAnswer, setUserAnswer] = useState(null)
 
-    const HANDLE_SETSTATE1 = (e) =>{
-        setUserAnswer(e);
-    }
+    //const HANDLE_SETSTATE1 = (e) =>{
+    //    setUserAnswer(e);
+    //}
 
     useEffect(() => {
 
@@ -41,54 +42,60 @@ function Play() {
     //first time for check
     useEffect(() => {
 
-        const HANDLE_STATE1 = (e) => {
-            setEquation(e);
-        }
+        //const HANDLE_STATE1 = (e) => {
+        //    setEquation(e);
+        //}
 
-        const HANDLE_STATE2 = (e) => {
-            setAnsequation(e);
-        }
+        //const HANDLE_STATE2 = (e) => {
+        //    setAnsequation(e);
+        //}
 
         RandomEquation({
-            setEQ: HANDLE_STATE1
+            setEQ: setEquation
         })
 
         RandomEquationAnswer({
-            setANSEQ: HANDLE_STATE2
+            setANSEQ: setAnsequation
         })
 
     }, [])
     
     return (
-        <>
-            
-                <div class='top-parent'>
-                    <div class='main-parent'>
-                    <div class='underline'><div class='logo-text'>Faster Than you think</div></div>
-                    <div><Timer /></div>
-                    </div>
+        <div class='body'>
+            <div class='play-main'>
+                <div class='sub-card-1'>
+                    <Logoicons/>
                 </div>
-
-                <div class='middle-parent'>
-
-                    <div class='first-card'>
-
-                        <div class='stack'></div>
-
-                        <UserContext.Provider value={{equation, ansequation, userAnswer}}>
-                            <Message />
-                            <OperationField setUserAnswer={HANDLE_SETSTATE1} />
-                            <div><Calculated userAnswer={userAnswer}/></div>
-                        </UserContext.Provider>
-
+                <section class='card-main'>
+                    <Timer/>
+                            <UserContext.Provider value={{equation, ansequation, userAnswer}}>
+                                
+                                <Message />
+                                <div class='userInput'><Calculated userAnswer={userAnswer}/></div>
+                                <OperationField setUserAnswer={setUserAnswer} />
+                                
+                            </UserContext.Provider>
+                </section>
+                <div class='sub-card-2'>
+                    <div class='fb-parent'>
+                        <div>
+                            <a class='fb' href='https://forms.gle/9pkHUcD2p17SHmcT6'>Feedback here!</a>
+                        </div>
+                        <div class='fb-parent2'>
+                            <a class='fb-small' href='https://sites.google.com/pcccr.ac.th/testingkub/'>Site</a>
+                            <a class='fb-small' href='https://github.com/Bermlnwza/Faster-than-you-think'>Github</a>
+                        </div>
                     </div>
-
-                    <div class='second-card'>
-                        <Leaderboard />
+                    
+                    {/* 
+                    <div class='help-parent'>
+                        <div class='button-main suggestbutton'>need some help? click me!</div>
+                        <button class='button-main button-logo'>!</button>
                     </div>
+                    */}
                 </div>
-
-        </>
+            </div>
+        </div>
     )
 }
 

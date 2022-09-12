@@ -1,6 +1,14 @@
-.parent {
+.parent-output {
   text-align: center;
   display: flex;
   flex-direction: column;
   font-size: 48px;
+  font-weight: 600;
+}
+.parent-output .eq {
+  font-size: 48px;
+  letter-spacing: 12px;
+}
+.parent-output .ans {
+  font-size: 60px;
 }/*# sourceMappingURL=index.css.map */

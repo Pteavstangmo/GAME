@@ -1,35 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
-.parent {
-  font-family: "Kanit", sans-serif;
+.parent-inside {
+  font-family: "IBM Plex Sans Thai", sans-serif;
   display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
-.parent .inputfield {
+.parent-inside .parent-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.parent-inside .parent-input .inputfield {
+  background-color: transparent;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px;
+  box-shadow: 0px 5px 0px 0px #000000;
+  border: 3px solid #002622;
+  transition: 1s;
+  text-align: center;
+}
+.parent-inside .parent-input .inputfield:focus {
+  outline: none;
+  width: 400px;
+}
+
+.numpad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.numpad section {
   font-size: 16px;
-  padding: 10px 10px 10px 10px;
+  display: flex;
+  gap: 5px;
 }
-.parent .inputfield:focus {
-  background-color: white;
+.numpad button {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 3px solid #002622;
+  box-shadow: 0px 2px 0px 0px #000000;
 }
-.parent .parentbutton {
-  font-family: "Kanit", sans-serif;
-}
-.parent .parentbutton .buttonSubmit {
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 4px;
-  border-color: white;
+.numpad button:hover {
   background-color: #FDB90E;
-  padding: 8px 12px 8px 12px;
 }
-.parent .parentbutton .buttonReset {
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 4px;
-  border-color: white;
-  background-color: white;
-  padding: 8px 12px 8px 12px;
+
+.button-main {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 45px;
+  width: 145px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 3px solid #002622;
+  box-shadow: 0px 5px 0px 0px #000000;
+  gap: 10px;
+}
+
+.button-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 0px 0px #000000;
+}
+
+.submit {
+  background-color: #FDB90E;
+  fill: transparent;
+  transition-duration: 0.75s;
+}
+.submit:hover {
+  width: 160px;
+  height: 60px;
+  font-size: 24px;
+}
+
+.reset {
+  background-color: transparent;
+  transition-duration: 0.5s;
+}
+.reset:hover {
+  color: white;
+  background-color: red;
+}
+
+.parentbutton {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+@media (max-width: 1040px) {
+  .parent-inside {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=index.css.map */
