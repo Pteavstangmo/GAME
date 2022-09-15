@@ -1,3 +1,4 @@
+import './index.css'
 import React from 'react'
 import { evalhandler } from '../AnswerChecker.module';
 
@@ -7,7 +8,7 @@ function Calculated(userAnswer) {
 
     if(post_value !== null){
         return(
-            <div>User input : {post_value}</div>
+            <div class='messages'>User input : {post_value}</div>
         )
     }
 

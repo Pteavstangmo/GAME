@@ -1,9 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
+import Secret from '../../../Secret'
+import { evalhandler } from '../AnswerChecker.module'
+import { UserContext } from '../..'
 import './css/index.css'
 
 function OperationField({setUserAnswer}) {
 
+    const { ansequation } = useContext(UserContext)
     const [value, setValue] = useState('')
+    const [secret1, setSecret1] = useState(false)
 
     useEffect(() => {
 
@@ -13,13 +18,16 @@ function OperationField({setUserAnswer}) {
             fieldArray = []
         }
 
-        console.log(fieldArray)
+        secretActive()
+        
     }, [value])
     
     
 
-    function onclickHandler() {
+    const onclickHandler = async() => {
+
         setUserAnswer(value)
+        
     }
 
     const resetHandler = () => {
@@ -41,16 +49,29 @@ function OperationField({setUserAnswer}) {
         setValue((prev)=>prev.slice(0, -1))
     }
 
+    const secretActive = async() => {
+        if(value==='123'){
+            setSecret1(true)
+        }
+    }
+
+    const confirmHandler = async() => {
+        console.log( ansequation )
+    }
+    
+
     return (
         <><div class='big'>
-
+                {secret1 && <Secret/>}
                 <div class='parent-inside'>
                     <div class='parent-input'>
                         <input class='inputfield' type='text' value={value} onChange={(e)=>{setValue(e.target.value)}}/>
                         <button class='button-main button-logo reset' onClick={clearHandler}> X </button>
+                        
                     </div>
 
                     <div class='numpad'>
+                        
                         <section>
                             <button onClick={(e)=>{numpadHandler(e)}}>1</button>
                             <button onClick={(e)=>{numpadHandler(e)}}>2</button>
@@ -87,6 +108,9 @@ function OperationField({setUserAnswer}) {
                 <div class='parentbutton'>
                     <button class='button-main submit' onClick={onclickHandler}>Submit!</button>
                     <button class='button-main reset' onClick={resetHandler}>Reset</button>
+                </div>
+                <div class='parentbutton'>
+                    <button class='button-main submit' onClick={confirmHandler}>Confirm!</button>
                 </div>
 
 

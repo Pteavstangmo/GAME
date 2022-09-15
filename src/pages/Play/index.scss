@@ -32,6 +32,27 @@
     .sub-card-1{
         display: box;
         grid-column-start: 1;
+
+        .logohandler{
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 10px;
+
+            .fullname{
+                display: none;
+                align-items: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: 800;
+                font-size: 24px;
+                margin-left: 10px;
+            }
+
+            &:hover{
+                .fullname{
+                    display: flex;
+                }
+            }
+        }
     }
 
     .sub-card-2{

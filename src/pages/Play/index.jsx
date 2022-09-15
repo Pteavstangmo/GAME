@@ -10,7 +10,7 @@ import { AnswerChecker } from './Components/AnswerChecker.module'
 
 //jsx components import
 import Message from './Components/Message'
-import OperationField from './Components/Input'
+import OperationField from './Components/input'
 import Calculated from './Components/Calculate/Calculated'
 import Timer from './Components/timer/timer'
 
@@ -64,7 +64,10 @@ function Play() {
         <div class='body'>
             <div class='play-main'>
                 <div class='sub-card-1'>
-                    <Logoicons/>
+                    <div class='logohandler'>
+                        <Logoicons/>
+                        <div class='fullname'>Faster Than You Think</div>
+                    </div>
                 </div>
                 <section class='card-main'>
                     <Timer/>

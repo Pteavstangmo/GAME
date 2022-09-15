@@ -1,9 +1,19 @@
 @import '../../../scss/varible';
 
+@keyframes Alert {
+    0% {color: red;}
+    50% {color:black}
+    100% {color:black}
+}
+
 .Timer {
 
     font-family: $main-font;
     font-size: 22px;
     margin-top: 10px;
-    
+
+    animation-name: Alert;
+    animation-duration: 50ms;
+
 }
+

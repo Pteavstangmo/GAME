@@ -128,10 +128,15 @@
     transition-duration: 0.5s;
 
     &:hover{
+        content: 'Yes!';
         color: white;
         background-color: red;
     }
     
+}
+
+.comfirm{
+    display: none;
 }
 
 .parentbutton{
@@ -150,5 +155,9 @@
 @media (max-width: 1040px){
     .parent-inside{
         flex-direction: column;
+    }
+    .parent-inside .parent-input .inputfield:focus{
+        width: 224px;
+        outline: none;
     }
 }

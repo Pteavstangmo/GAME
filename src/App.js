@@ -1,16 +1,20 @@
 import './App.css';
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Play from './pages/Play';
 import Document from './pages/Document';
 import Error404 from './pages/Error';
-import FirstTime from './pages/HowTo';
+import Tutorial from './pages/HowTo';
+import Loadings from './pages/Loading';
+
 //import Tip from '../src/pages/Document/Components/Docs/pages/Tip'
 //import Refence from '../src/pages/Document/Components/Docs/pages/Refence'
 //import Gettings from '../src/pages/Document/Components/Docs/pages/Gettings'
 //import Basic from '../src/pages/Document/Components/Docs/pages/Basic'
 //import Credit from '../src/pages/Document/Components/Docs/pages/Credit'
+
+
 
 function App() {
 
@@ -19,10 +23,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/'>
-            <Route index element={false ? (<Navigate replace to="/1" />) : (<Play/>)} />
-            <Route path="Play" element={<Play />} />
-            <Route path="Docs" element={<Document />} />
-            <Route path="1" element={<FirstTime/>} />
+            <Route index element={<Loadings/>} />
+            <Route path="play" element={<Play />} />
+            <Route path="docs" element={<Document />} />
+            <Route path="tutorial" element={<Tutorial/>} />
             <Route path="*" element={<Error404 />} />
           </Route>
           {/*

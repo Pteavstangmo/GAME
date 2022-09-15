@@ -1,0 +1,14 @@
+.messages{
+    font-size: 18px;
+    border: 3px solid black;
+    padding: 3px 5px 3px 5px;
+    box-shadow: 0px 2px 0px 0px #000000;
+
+    transition-duration: 0.5s;
+
+}
+
+.messages:hover{
+    padding: 3px 10px 3px 10px;
+    font-weight: 600;
+}
