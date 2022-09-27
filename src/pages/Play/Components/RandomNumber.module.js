@@ -24,8 +24,6 @@ const RandomEquation = ({ setEQ }) => {
 
     } while (true);
 
-    
-
 }
 
 const startrandomChecker = (Array) => {

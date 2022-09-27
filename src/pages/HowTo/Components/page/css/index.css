@@ -4,23 +4,13 @@
   padding: 0;
 }
 
-.error {
+.main-parent {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
 }
-.error .brn {
-  font-size: 24px;
-  font-weight: 100;
-  margin: 13px 16px 0 0;
-  padding: 10px;
-  border-radius: 10px;
-}
-.error .brn:hover {
-  background-color: #FDB90E;
-  font-weight: 400;
+.main-parent img {
+  width: auto;
+  height: 100%;
 }/*# sourceMappingURL=index.css.map */

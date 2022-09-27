@@ -1,13 +1,14 @@
+import './index.css'
 import React from 'react'
 import { evalhandler } from '../AnswerChecker.module';
 
 function Calculated(userAnswer) {
     
-    const value_ = evalhandler((Object.values(userAnswer))[0]);
+    const post_value = evalhandler((Object.values(userAnswer))[0]);
 
-    if(value_ !== null){
+    if(post_value !== null){
         return(
-            <div>{value_}</div>
+            <div class='messages'>User input : {post_value}</div>
         )
     }
 

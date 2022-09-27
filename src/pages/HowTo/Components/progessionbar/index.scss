@@ -1,0 +1,27 @@
+@import '../../../scss/varible';
+
+.dot-parent{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    .dot{
+        height: 10px;
+        width: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 2px solid $main-black;
+
+        box-shadow: 0px 3px 0px 0px #000000;
+
+        border-radius: none;
+
+        transition: width 1s, border-radius 1s;
+    }
+}

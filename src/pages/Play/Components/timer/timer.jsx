@@ -3,7 +3,13 @@ import './css/index.css'
 
 function Timer() {
 
-    const [timer, setTimer] = useState(120)
+    const [timer, setTimer] = useState(32)
+
+    const timealert = {
+      color:'red',
+      fontSize:'42px',
+      fontWeight:'800'
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -11,7 +17,7 @@ function Timer() {
         }, 1000);
         return () => clearInterval(interval);
       }, [])
-
+      
       const endtimer = new Promise(function(resolve, reject){
         if(timer<=0){
             setTimeout(() => {
@@ -21,7 +27,7 @@ function Timer() {
       })
 
   return (
-    <div class='Timer'>Timer left : {timer}</div>
+    <h2 class='Timer' style={(timer <= 30) ? timealert : null}>Timer left : {timer}</h2>
   )
 
 }

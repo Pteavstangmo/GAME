@@ -7,9 +7,9 @@ export default function Message(props) {
     const { equation, ansequation } = useContext(UserContext)
 
   return (
-    <div class='parent'>
-        {equation}
-        <div>{ansequation}</div>
+    <div class='parent-output'>
+        <div class='eq'>{equation}</div>
+        <div class='ans'>{ansequation}</div>
     </div>
   )
 }

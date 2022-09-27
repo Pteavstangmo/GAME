@@ -1,0 +1,13 @@
+@import '../../../scss/varible';
+
+.main-parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: auto;
+        height: 100%;
+    }
+}

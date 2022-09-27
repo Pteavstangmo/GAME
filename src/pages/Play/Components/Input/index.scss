@@ -1,41 +1,163 @@
 @import '../../../scss/varible';
 
-.parent{
+.parent-inside{
 
-    font-family: 'Kanit', sans-serif;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
 
     display: flex;
+    flex-direction: row;
+    gap: 20px;
 
-    .inputfield{
+    .parent-input{
 
-        font-size: 16px;
-        padding: 10px 10px 10px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        &:focus{
-            background-color: white;
+        gap: 10px;
+
+        .inputfield{
+
+            background-color: transparent;
+
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px;
+
+            box-shadow: 0px 5px 0px 0px #000000;
+            border: 3px solid $main-black;
+
+            transition: 1s;
+
+            text-align: center;
+
+            &:focus{
+                outline: none;
+                width: 400px;
+            }
+            
         }
     }
+}
 
-    .parentbutton{
+.numpad{
 
-        font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 
-        .buttonSubmit{
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 4px;
-            border-color: white;
-            background-color: #FDB90E;
-            padding: 8px 12px 8px 12px;
+    section{
+        font-size: 16px;
+        display: flex;
+        gap: 5px;
+    }
+
+    button{
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+
+        border-radius: 3px;
+
+        font-weight: 600;
+    
+        border: 3px solid $main-black;
+    
+        box-shadow: 0px 2px 0px 0px #000000;
+
+        &:hover{
+            background-color: $main-yellow;
         }
 
-        .buttonReset{
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 4px;
-            border-color: white;
-            background-color: white;
-            padding: 8px 12px 8px 12px;
-        }
+    }
+    
+}
+
+.button-main{
+
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    height: 45px;
+    width: 145px;
+    border-radius: 3px;
+
+    font-weight: 600;
+
+    border: 3px solid $main-black;
+
+    box-shadow: 0px 5px 0px 0px #000000;
+
+    gap: 10px;
+
+}
+
+.button-logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+
+    box-shadow: 0px 3px 0px 0px #000000;
+}
+
+.submit{
+
+    background-color: $main-yellow;
+    fill: transparent;
+    transition-duration: 0.75s;
+
+    &:hover{
+        width: 160px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+}
+
+.reset{
+
+    background-color: transparent;
+    transition-duration: 0.5s;
+
+    &:hover{
+        content: 'Yes!';
+        color: white;
+        background-color: red;
+    }
+    
+}
+
+.comfirm{
+    display: none;
+}
+
+.parentbutton{
+
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+
+    margin-top: 50px;
+
+}
+
+@media (max-width: 1040px){
+    .parent-inside{
+        flex-direction: column;
+    }
+    .parent-inside .parent-input .inputfield:focus{
+        width: 224px;
+        outline: none;
     }
 }
