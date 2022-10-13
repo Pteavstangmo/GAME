@@ -1,105 +1,132 @@
-import React,{ useEffect, useState, createContext } from 'react'
+import React, { useEffect, useState, createContext } from "react";
+import { useNavigate } from "react-router-dom";
 
-import './css/index.css'
+import "./css/index.css";
 
-import { ReactComponent as Logoicons } from '../../assets/Asset 1.svg'
+import { ReactComponent as Logoicons } from "../../assets/Asset 1.svg";
 
 //js modules import
-import { RandomEquation, RandomEquationAnswer } from './Components/RandomNumber.module'
-import { AnswerChecker } from './Components/AnswerChecker.module'
+import {
+	RandomEquation,
+	RandomEquationAnswer,
+} from "./Components/RandomNumber.module";
+import { AnswerChecker } from "./Components/AnswerChecker.module";
 
 //jsx components import
-import Message from './Components/Message'
-import OperationField from './Components/input'
-import Calculated from './Components/Calculate/Calculated'
-import Timer from './Components/timer/timer'
+import Message from "./Components/Message";
+import OperationField from "./Components/Input";
+import Calculated from "./Components/Calculate/Calculated";
+import Timer from "./Components/timer/timer";
 
-
-export const UserContext = createContext(null)
+export const UserContext = createContext(null);
 
 function Play() {
+	//Constructor
+	const [equation, setEquation] = useState(null);
+	const [ansequation, setAnsequation] = useState(null);
+	const [userAnswer, setUserAnswer] = useState(null);
 
-    //Constructor
-    const [equation, setEquation] = useState(null)
-    const [ansequation, setAnsequation] = useState(null)
-    const [userAnswer, setUserAnswer] = useState(null)
+	const Navigate = useNavigate();
 
-    //const HANDLE_SETSTATE1 = (e) =>{
-    //    setUserAnswer(e);
-    //}
+	//const HANDLE_SETSTATE1 = (e) =>{
+	//    setUserAnswer(e);
+	//}
 
-    useEffect(() => {
+	useEffect(() => {
+		if (
+			userAnswer === null ||
+			ansequation === null ||
+			userAnswer === null
+		) {
+		} else {
+			//operated the answerchecker
+			AnswerChecker(userAnswer, ansequation, equation);
+		}
+	}, [equation, userAnswer, ansequation]);
 
-        if(userAnswer === null || ansequation === null || userAnswer === null){
+	//first time for check
+	useEffect(() => {
+		//const HANDLE_STATE1 = (e) => {
+		//    setEquation(e);
+		//}
 
-        } else{
-            //operated the answerchecker
-            AnswerChecker(userAnswer, ansequation, equation)
-        }
-    
-    }, [equation, userAnswer, ansequation])
+		//const HANDLE_STATE2 = (e) => {
+		//    setAnsequation(e);
+		//}
 
-    //first time for check
-    useEffect(() => {
+		RandomEquation({
+			setEQ: setEquation,
+		});
 
-        //const HANDLE_STATE1 = (e) => {
-        //    setEquation(e);
-        //}
+		RandomEquationAnswer({
+			setANSEQ: setAnsequation,
+		});
+	}, []);
 
-        //const HANDLE_STATE2 = (e) => {
-        //    setAnsequation(e);
-        //}
+	const howtohandler = () => {
+		Navigate("/tutorial");
+	};
 
-        RandomEquation({
-            setEQ: setEquation
-        })
+	return (
+		<div class="body">
+			<div class="play-main">
+				<div class="sub-card-1">
+					<div class="logohandler">
+						<Logoicons />
+						<div class="fullname">Faster Than You Think</div>
+					</div>
+				</div>
+				<section class="card-main">
+					<Timer />
+					<UserContext.Provider
+						value={{ equation, ansequation, userAnswer }}
+					>
+						<Message />
+						<div class="userInput">
+							<Calculated userAnswer={userAnswer} />
+						</div>
+						<OperationField setUserAnswer={setUserAnswer} />
+					</UserContext.Provider>
+				</section>
+				<div class="sub-card-2">
+					<div class="fb-parent">
+						<div>
+							<a
+								class="fb"
+								href="https://forms.gle/9pkHUcD2p17SHmcT6"
+							>
+								Feedback here!
+							</a>
+						</div>
+						<div class="fb-parent2">
+							<a
+								class="fb-small"
+								href="https://sites.google.com/pcccr.ac.th/testingkub/"
+							>
+								Site
+							</a>
+							<a
+								class="fb-small"
+								href="https://github.com/Bermlnwza/Faster-than-you-think"
+							>
+								Github
+							</a>
+						</div>
+						<button class="fb" onClick={howtohandler}>
+							How to play!
+						</button>
+					</div>
 
-        RandomEquationAnswer({
-            setANSEQ: setAnsequation
-        })
-
-    }, [])
-    
-    return (
-        <div class='body'>
-            <div class='play-main'>
-                <div class='sub-card-1'>
-                    <div class='logohandler'>
-                        <Logoicons/>
-                        <div class='fullname'>Faster Than You Think</div>
-                    </div>
-                </div>
-                <section class='card-main'>
-                    <Timer/>
-                            <UserContext.Provider value={{equation, ansequation, userAnswer}}>
-                                
-                                <Message />
-                                <div class='userInput'><Calculated userAnswer={userAnswer}/></div>
-                                <OperationField setUserAnswer={setUserAnswer} />
-                                
-                            </UserContext.Provider>
-                </section>
-                <div class='sub-card-2'>
-                    <div class='fb-parent'>
-                        <div>
-                            <a class='fb' href='https://forms.gle/9pkHUcD2p17SHmcT6'>Feedback here!</a>
-                        </div>
-                        <div class='fb-parent2'>
-                            <a class='fb-small' href='https://sites.google.com/pcccr.ac.th/testingkub/'>Site</a>
-                            <a class='fb-small' href='https://github.com/Bermlnwza/Faster-than-you-think'>Github</a>
-                        </div>
-                    </div>
-                    
-                    {/* 
+					{/* 
                     <div class='help-parent'>
                         <div class='button-main suggestbutton'>need some help? click me!</div>
                         <button class='button-main button-logo'>!</button>
                     </div>
                     */}
-                </div>
-            </div>
-        </div>
-    )
+				</div>
+			</div>
+		</div>
+	);
 }
 
-export default Play
+export default Play;

@@ -11,8 +11,8 @@
   gap: 10px;
 }
 .dot-parent .dot {
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
