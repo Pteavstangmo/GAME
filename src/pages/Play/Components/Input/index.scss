@@ -1,163 +1,149 @@
-@import '../../../scss/varible';
+@import "../../../scss/varible";
 
-.parent-inside{
+.parent-inside {
+	font-family: "IBM Plex Sans Thai", sans-serif;
 
-    font-family: 'IBM Plex Sans Thai', sans-serif;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
 
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+	.parent-input {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    .parent-input{
+		gap: 10px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+		.inputfield {
+			background-color: transparent;
 
-        gap: 10px;
+			font-family: "IBM Plex Sans Thai", sans-serif;
+			font-size: 18px;
+			font-weight: 600;
+			padding: 8px;
 
-        .inputfield{
+			box-shadow: 0px 5px 0px 0px #000000;
+			border: 3px solid $main-black;
 
-            background-color: transparent;
+			transition: 1s;
 
-            font-family: 'IBM Plex Sans Thai', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 8px;
+			text-align: center;
 
-            box-shadow: 0px 5px 0px 0px #000000;
-            border: 3px solid $main-black;
+			outline: none;
 
-            transition: 1s;
-
-            text-align: center;
-
-            &:focus{
-                outline: none;
-                width: 400px;
-            }
-            
-        }
-    }
+			&:focus {
+				outline: none;
+			}
+		}
+	}
 }
 
-.numpad{
+.numpad {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
+	section {
+		font-size: 16px;
+		display: flex;
+		gap: 5px;
+	}
 
-    section{
-        font-size: 16px;
-        display: flex;
-        gap: 5px;
-    }
+	button {
+		width: 45px;
+		height: 45px;
+		font-size: 18px;
 
-    button{
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+		border-radius: 3px;
 
-        border-radius: 3px;
+		font-weight: 600;
 
-        font-weight: 600;
-    
-        border: 3px solid $main-black;
-    
-        box-shadow: 0px 2px 0px 0px #000000;
+		border: 3px solid $main-black;
 
-        &:hover{
-            background-color: $main-yellow;
-        }
+		box-shadow: 0px 2px 0px 0px #000000;
 
-    }
-    
+		&:hover {
+			background-color: $main-yellow;
+		}
+	}
 }
 
-.button-main{
+.button-main {
+	font-family: "IBM Plex Sans Thai", sans-serif;
+	font-size: 18px;
 
-    font-family: 'IBM Plex Sans Thai', sans-serif;
-    font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    
-    height: 45px;
-    width: 145px;
-    border-radius: 3px;
+	height: 45px;
+	width: 145px;
+	border-radius: 3px;
 
-    font-weight: 600;
+	font-weight: 600;
 
-    border: 3px solid $main-black;
+	border: 3px solid $main-black;
 
-    box-shadow: 0px 5px 0px 0px #000000;
+	box-shadow: 0px 5px 0px 0px #000000;
 
-    gap: 10px;
-
+	gap: 10px;
 }
 
-.button-logo{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+.button-logo {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
 
-    box-shadow: 0px 3px 0px 0px #000000;
+	box-shadow: 0px 3px 0px 0px #000000;
 }
 
-.submit{
+.submit {
+	background-color: $main-yellow;
+	fill: transparent;
+	transition-duration: 0.75s;
 
-    background-color: $main-yellow;
-    fill: transparent;
-    transition-duration: 0.75s;
-
-    &:hover{
-        width: 160px;
-        height: 60px;
-        font-size: 24px;
-    }
-    
+	&:hover {
+		width: 160px;
+		height: 60px;
+		font-size: 24px;
+	}
 }
 
-.reset{
+.reset {
+	background-color: transparent;
+	transition-duration: 0.5s;
 
-    background-color: transparent;
-    transition-duration: 0.5s;
-
-    &:hover{
-        content: 'Yes!';
-        color: white;
-        background-color: red;
-    }
-    
+	&:hover {
+		content: "Yes!";
+		color: white;
+		background-color: red;
+	}
 }
 
-.comfirm{
-    display: none;
+.comfirm {
+	display: none;
 }
 
-.parentbutton{
+.parentbutton {
+	font-family: "IBM Plex Sans Thai", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 15px;
 
-    font-family: 'IBM Plex Sans Thai', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 15px;
-
-    margin-top: 50px;
-
+	margin-top: 50px;
 }
 
-@media (max-width: 1040px){
-    .parent-inside{
-        flex-direction: column;
-    }
-    .parent-inside .parent-input .inputfield:focus{
-        width: 224px;
-        outline: none;
-    }
+@media (max-width: 1040px) {
+	.parent-inside {
+		flex-direction: column;
+	}
+	.parent-inside .parent-input .inputfield:focus {
+		width: 224px;
+		outline: none;
+	}
 }

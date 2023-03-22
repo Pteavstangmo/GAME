@@ -26,10 +26,10 @@
   border: 3px solid #002622;
   transition: 1s;
   text-align: center;
+  outline: none;
 }
 .parent-inside .parent-input .inputfield:focus {
   outline: none;
-  width: 400px;
 }
 
 .numpad {
